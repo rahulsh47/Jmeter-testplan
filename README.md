@@ -20,9 +20,7 @@ JMeter is an open-source performance testing tool developed by the Apache Softwa
 - **Java** : JMeter requires a Java Runtime Environment (JRE) version 8 or higher. You can verify your Java installation by running java -version in your terminal. If you don't have Java, download and install it from https://www.oracle.com/java/technologies/downloads/.
 
 
-## Command to open the Jmeter via terminal
-
-Install and Setup the Nightwatch in Project (if the path is not set)
+## Command to open the Jmeter via terminal (if the path is not set)
 
 ```bash
   ./jmeter.sh
