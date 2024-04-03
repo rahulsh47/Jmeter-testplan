@@ -32,6 +32,11 @@ jobs:
         with:
           # JMeter test plan to execute
           test-plan-path: './Test Plan.jmx'
+      - name: Run JMeter Tests
+        run: |
+           jmeter -n -t Test_Plan.jmx -l test_results.jtl -e -o report_folder
+ 
+
       - name: Upload Results
         uses: actions/upload-artifact@v3
         with:
