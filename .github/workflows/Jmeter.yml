@@ -34,7 +34,7 @@ jobs:
           test-plan-path: './Test Plan.jmx'
       - name: Run JMeter Tests
         run: |
-           jmeter -n -t Test_Plan.jmx -l test_results.jtl -e -o report_folder
+           jmeter -n -t Test_Plan.jmx -l test_report.jtl -e -o report_folder
  
 
       - name: Upload Results
