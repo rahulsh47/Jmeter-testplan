@@ -36,5 +36,5 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: jmeter-results
-          path: result.jtl
+          path: test_report
           
