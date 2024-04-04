@@ -25,19 +25,15 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Assuming QAInsights/PerfAction handles JMeter execution
-      - name: Run JMeter Tests (using PerfAction)
-        uses: QAInsights/PerfAction@v5.6.2  # Assuming the latest version is v3.6.2
+      - name: PerfAction for JMeter
+        # You may pin to the exact commit or the version.
+        # uses: QAInsights/PerfAction@5a3c503bff845dd019d4b6e30d71f4585494a2ea
+        uses: QAInsights/PerfAction@v5.6.2
         with:
+          # JMeter test plan to execute
           test-plan-path: './Test Plan.jmx'
-
-      # Remove redundant step if PerfAction uploads desired reports
-      # - name: Run JMeter Tests (using jmeter command)  # Commented out
-
       - name: Upload Results
         uses: actions/upload-artifact@v3
         with:
           name: jmeter-results
-          # Update path if PerfAction generates reports in a different folder
-          path: test_report.jtl  # Assuming reports are in the same directory as JTL
-
+          path: test_report
