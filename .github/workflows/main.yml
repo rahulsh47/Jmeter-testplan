@@ -1,10 +1,7 @@
 name: CI
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  
   workflow_dispatch:
 
 jobs:
@@ -31,9 +28,4 @@ jobs:
         path: result.jtl
         if-no-files-found: error
 
-    - name: Upload HTML Reports
-      uses: actions/upload-artifact@v3
-      with:
-        name: jmeter-html-reports
-        path: reports
-        if-no-files-found: error
+  
