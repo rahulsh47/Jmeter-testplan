@@ -34,7 +34,7 @@ jobs:
       # Commented-out step with proper indentation
       - name: Run JMeter Tests (using jmeter command)  # Commented out
         run: |
-          jmeter -n -t Test_Plan.jmx -l test_report.jtl -e -o test_report
+          jmeter -n -t Test_Plan.jmx 
 
       
 
