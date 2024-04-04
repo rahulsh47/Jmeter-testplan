@@ -29,7 +29,7 @@ jobs:
       - name: PerfAction for JMeter
         uses: QAInsights/PerfAction@v5.6.2
         with:
-          test-plan-path: './Test Plan.jmx'
+          test-plan-path: './Test_Plan.jmx'
 
       # Commented-out step with proper indentation
       - name: Run JMeter Tests (using jmeter command)  # Commented out
