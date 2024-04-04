@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: PerfAction for JMeter
         # You may pin to the exact commit or the version.
@@ -32,8 +32,13 @@ jobs:
         with:
           # JMeter test plan to execute
           test-plan-path: './Test Plan.jmx'
+      - name: Run JMeter Tests
+        run: |
+           jmeter -n -t Test_Plan.jmx -l test_report.jtl -e -o report_folder.jtl
+ 
+
       - name: Upload Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jmeter-results
           path: test_report.jtl
