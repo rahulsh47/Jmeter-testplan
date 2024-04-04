@@ -25,16 +25,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Commented-out step with proper indentation
-      - name: Run JMeter Tests (using jmeter command)  # Commented out
-        run: |
-          jmeter -n -t Test_Plan.jmx -l test_report.jtl -e -o test_report
-
       # PerfAction step with proper indentation
       - name: PerfAction for JMeter
         uses: QAInsights/PerfAction@v5.6.2
         with:
           test-plan-path: './Test Plan.jmx'
+
+      # Commented-out step with proper indentation
+      - name: Run JMeter Tests (using jmeter command)  # Commented out
+        run: |
+          jmeter -n -t Test_Plan.jmx -l test_report.jtl -e -o test_report
+
+      
 
       # Upload Results step with proper indentation
       - name: Upload Results
