@@ -34,7 +34,7 @@ jobs:
       # Commented-out step with proper indentation
       - name: Run JMeter Tests (using jmeter command)  # Commented out
         run: |
-          jmeter -n -t Test_Plan.jmx -l test_report.jtl -e -o test_report.jtl
+          jmeter -n -t Test_Plan.jmx -l test_report.jtl -e -o test_report
 
       
 
@@ -43,4 +43,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jmeter-results
-          path: test_report.jtl
+          path: test_report
